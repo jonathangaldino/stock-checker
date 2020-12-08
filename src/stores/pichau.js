@@ -10,10 +10,11 @@ module.exports = async ({
   log.debug('Creating new page...');
   const page = await browser.newPage();
 
-  log.debug(`Going to ${productURL}`);
-  await page.goto(productURL);
+  try {
+    log.debug(`Going to ${productURL}`);
+    await page.goto(productURL);
 
-  const stockStatus = await page.evaluate(() => {
+    const stockStatus = await page.evaluate(() => {
     const nodes = [];
 
     document.querySelectorAll('div.product-info-main > button.button-action-to-cart')
@@ -26,6 +27,9 @@ module.exports = async ({
     return nodes.length > 0;
   })
 
-  log.info(stockStatus ? messages.IN_STOCK_MESSAGE : messages.OUT_OF_STOCK_MESSAGE);
-  return stockStatus;
+    log.info(stockStatus ? messages.IN_STOCK_MESSAGE : messages.OUT_OF_STOCK_MESSAGE);
+    return stockStatus;
+  } catch (err) {
+    log.error(`Request failed =(`)
+  }
 }

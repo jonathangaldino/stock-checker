@@ -12,6 +12,10 @@ const main = async () => {
       name: 'ASRock RX 5700 XT 8gb',
       url: 'https://www.pichau.com.br/hardware/placa-de-video/placa-de-video-asrock-radeon-rx-5700-xt-8gb-phantom-gaming-d-oc-edition-256-bit-90-ga1jzz-00uanf'
     },
+    {
+      name: 'Gigabyte RTX 3080 OC',
+      url: 'https://www.pichau.com.br/hardware/placa-de-video/placa-de-video-gigabyte-geforce-rtx-3080-gaming-oc-10gb-gddr6x-320-bit-gv-n3080gaming-oc-10gd'
+    }
   ]
 
   logger.debug('Opening puppeteer browser...')
