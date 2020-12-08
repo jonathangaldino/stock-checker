@@ -16,16 +16,14 @@ const customLevels = {
 };
 
 const formatter = winston.format.combine(
-  winston.format.colorize(),
+  winston.format.colorize({ level: true, message: false }),
   winston.format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
   winston.format.splat(),
   winston.format.printf(info => {
     const { timestamp, level, message, store, product, ...meta } = info;
 
     if (store && product) {
-      return `${timestamp} ${level} :: [${store}] [${product}] :: ${message} ${
-        Object.keys(meta).length ? JSON.stringify(meta, null, 2) : ''
-      }`;
+      return `${timestamp} ${level} :: [${store}] [${product}] :: ${message}`;
     }
 
     return `${timestamp} ${level} :: ${message} ${
@@ -40,9 +38,9 @@ const makeLogger = () => {
   });
 
   const logger = winston.createLogger({
-    level: 'debug',
+    level: 'info',
     levels: customLevels.levels,
-    transports: [devTransport]
+    transports: [devTransport],
   })
 
   winston.addColors(customLevels.colors)
