@@ -4,10 +4,11 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon src/example.js"
+    "dev": "nodemon src/index.js"
   },
   "dependencies": {
     "puppeteer": "^5.5.0",
+    "url": "^0.11.0",
     "winston": "^3.3.3"
   },
   "devDependencies": {
