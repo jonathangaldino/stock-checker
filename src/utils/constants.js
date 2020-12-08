@@ -1,4 +1,5 @@
 const pichauFn = require('../stores/pichau');
+const kabumFn = require('../stores/kabum');
 
 module.exports.messages = {
   IN_STOCK_MESSAGE: 'IN STOCK',
@@ -7,5 +8,6 @@ module.exports.messages = {
 };
 
 module.exports.supportedStores = {
-  pichau: pichauFn
+  pichau: pichauFn,
+  kabum: kabumFn
 };

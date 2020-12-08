@@ -9,12 +9,16 @@ const main = async () => {
       url: 'https://www.pichau.com.br/hardware/placa-de-video/placa-de-video-asus-geforce-rtx-3080-tuf-gaming-10gb-gddr6x-320-bit-tuf-rtx3080-10g-gaming',
     },
     {
-      name: 'ASRock RX 5700 XT 8gb',
-      url: 'https://www.pichau.com.br/hardware/placa-de-video/placa-de-video-asrock-radeon-rx-5700-xt-8gb-phantom-gaming-d-oc-edition-256-bit-90-ga1jzz-00uanf'
-    },
-    {
       name: 'Gigabyte RTX 3080 OC',
       url: 'https://www.pichau.com.br/hardware/placa-de-video/placa-de-video-gigabyte-geforce-rtx-3080-gaming-oc-10gb-gddr6x-320-bit-gv-n3080gaming-oc-10gd'
+    },
+    {
+      name: 'Asus RTX 3080',
+      url: 'https://www.kabum.com.br/produto/121138/placa-de-v-deo-asus-nvidia-geforce-rtx3080-10gb-gddr6-tuf-rtx3080-10g-gaming'
+    },
+    {
+      name: 'AMD Radeon RX 550 Pulse 4G',
+      url: 'https://www.kabum.com.br/produto/89279/placa-de-v-deo-sapphire-amd-radeon-rx-550-pulse-4g-gddr5-11268-01-20g'
     }
   ]
 
