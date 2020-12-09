@@ -4,7 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon src/index.js"
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js",
+    "start:cron": "node src/index.js --cron"
   },
   "dependencies": {
     "node-cron": "^2.0.3",
