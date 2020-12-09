@@ -15,21 +15,24 @@ module.exports = async ({
     await page.goto(productURL);
 
     const stockStatus = await page.evaluate(() => {
-    const nodes = [];
+      const nodes = [];
 
-    document.querySelectorAll('div.product-info-main > button.button-action-to-cart')
-      .forEach(btn => {
-        if (btn.getAttribute('id') === 'buttonAddToCartTrigger' && !btn.disabled) {
-          nodes.push(btn);
-        }
-      })
-    
-    return nodes.length > 0;
-  })
+      document.querySelectorAll('div.product-info-main > button.button-action-to-cart')
+        .forEach(btn => {
+          if (btn.getAttribute('id') === 'buttonAddToCartTrigger' && !btn.disabled) {
+            nodes.push(btn);
+          }
+        })
+      
+      return nodes.length > 0;
+    })
 
     log.info(stockStatus ? messages.IN_STOCK_MESSAGE : messages.OUT_OF_STOCK_MESSAGE);
     return stockStatus;
   } catch (err) {
     log.error(`Request failed =(`)
+  } finally {
+    log.debug('Closing the page...');
+    await page.close();
   }
 }

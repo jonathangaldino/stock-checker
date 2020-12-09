@@ -15,13 +15,15 @@ module.exports = async ({
     await page.goto(productURL);
 
     const stockStatus = await page.evaluate(() => {
-
-    return document.querySelectorAll('div.box_botao > div.botao-comprar').length > 0;
-  })
+      return document.querySelectorAll('div.box_botao > div.botao-comprar').length > 0;
+    })
 
     log.info(stockStatus ? messages.IN_STOCK_MESSAGE : messages.OUT_OF_STOCK_MESSAGE);
     return stockStatus;
   } catch (err) {
     log.error(`Request failed =(`)
+  } finally {
+    log.debug('Closing the page...');
+    await page.close();
   }
 }
