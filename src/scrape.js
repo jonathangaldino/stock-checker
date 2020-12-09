@@ -5,6 +5,8 @@ const parseUrl = url.parse;
 const stores = Object.keys(supportedStores);
 
 module.exports = async ({ browser, productList, logger }) => {
+  const promises = [];
+  
   for (const product of productList) {
     const _url = parseUrl(product.url);
     const storeName = _url.hostname.split('.')[1];
@@ -15,12 +17,22 @@ module.exports = async ({ browser, productList, logger }) => {
 
     const fetchFn = supportedStores[storeName];
     
-    await fetchFn({ 
+    // await fetchFn({ 
+    //   browser, 
+    //   logger, 
+    //   productURL: product.url, 
+    //   productName: product.name, 
+    //   messages
+    // })
+
+    promises.push(fetchFn({ 
       browser, 
       logger, 
       productURL: product.url, 
       productName: product.name, 
       messages
-    })
+    }));
   }
+
+  await Promise.all(promises);
 }
