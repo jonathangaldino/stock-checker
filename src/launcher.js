@@ -69,7 +69,7 @@ const launcher = async () => {
 }
 
 const cronLauncher = () => {
-  const job = cron.schedule('* * * * *', async () => {// every 5 minutes
+  const job = cron.schedule('*/5 * * * *', async () => {// every 5 minutes
     await launcher();
   }, {
     scheduled: false
