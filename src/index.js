@@ -54,10 +54,6 @@ const main = async () => {
       url: 'https://www.kabum.com.br/produto/128078/placa-de-v-deo-gigabyte-nvidia-geforce-rtx-3080-10gb-gddr6x-gv-n3080eagle-oc-10gd'
     },
     {
-      name: 'MSI GT 710 2gb',
-      url: 'https://www.terabyteshop.com.br/produto/15568/placa-de-video-msi-geforce-gt-710-2gd3-lp-2gb-gddr3-64-bit-912-v809-2024'
-    },
-    {
       name: 'Asus RTX 3080 TUF',
       url: 'https://www.terabyteshop.com.br/produto/15107/placa-de-video-asus-tuf-geforce-rtx-3080-10gb-gddr6x-320bit-tuf-rtx3080-10g-gaming'
     }
