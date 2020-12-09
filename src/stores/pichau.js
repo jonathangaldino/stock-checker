@@ -30,7 +30,7 @@ module.exports = async ({
     log.info(stockStatus ? messages.IN_STOCK_MESSAGE : messages.OUT_OF_STOCK_MESSAGE);
     return stockStatus;
   } catch (err) {
-    log.error(`Request failed =(`)
+    log.error(`Request Failed - `, err)
   } finally {
     log.debug('Closing the page...');
     await page.close();
